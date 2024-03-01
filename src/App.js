@@ -6,7 +6,7 @@ function App() {
   function Intro() {
     return (
       <div>
-        <h1>Over The Garen Wall</h1>
+        <h1>Over The Garden Wall</h1>
         <p>
           Over the Garden Wall is an American animated television miniseries
           created by Patrick McHale for Cartoon Network. The series is about two
