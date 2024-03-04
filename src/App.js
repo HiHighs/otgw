@@ -1,3 +1,26 @@
+const categories = [
+  {
+    category: 'Animation',
+    emoji: '👺',
+    color: 'greenyellow',
+  },
+  {
+    category: 'Short',
+    emoji: '🙃',
+    color: 'lightgreen',
+  },
+  {
+    category: 'Adventure',
+    emoji: '👑',
+    color: 'lightseagreen',
+  },
+  {
+    category: 'Halloween',
+    emoji: '👻',
+    color: 'salmon',
+  },
+];
+
 function App() {
   function Avatar() {
     return <img src='./otgw.png' alt='avatar' />;
@@ -18,10 +41,10 @@ function App() {
     );
   }
 
-  function Category(props) {
+  function Category({ category, emoji, color }) {
     return (
-      <li className='category' style={{ backgroundColor: props.color }}>
-        {props.category} {props.emoji}
+      <li className='category' style={{ backgroundColor: color }}>
+        {category} {emoji}
       </li>
     );
   }
@@ -30,10 +53,15 @@ function App() {
     /*props: skill, emoji, background color*/
     return (
       <ul className='category-list'>
-        <Category category='Animation' emoji='👺' color='greenyellow' />
-        <Category category='Short' emoji='🙃' color='lightgreen' />
-        <Category category='Adventure' emoji='👑' color='lightseagreen' />
-        <Category category='Halloween' emoji='👻' color='salmon' />
+        {categories.map((category) => {
+          return (
+            <Category
+              category={category.category}
+              emoji={category.emoji}
+              color={category.color}
+            ></Category>
+          );
+        })}
       </ul>
     );
   }
